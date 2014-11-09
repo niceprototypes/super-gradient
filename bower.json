@@ -1,0 +1,12 @@
+{
+  "name": "super-gradient",
+  "version": "1.0.0",
+  "dependencies": {
+      "node-sass": "~0.7.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-sass": "~0.8.0"
+  }
+}

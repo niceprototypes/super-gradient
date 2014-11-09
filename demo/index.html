@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>SuperGradient</title>
+    <link rel="stylesheet" href="demo.css"/>
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>SuperGradient</h1>
+        <h2>SASS Multicolor Gradient Mixin (Linear & Radial)</h2>
+        <a class="github" href="https://github.com/mibgs/super-gradient" target="_blank">
+            <img src="github.svg" alt="Fork Me on Github"/>
+            <span>Fork Me on Github</span>
+        </a>
+    </div>
+</header>
+
+<section>
+    <div>
+        <h3><span>Vertical, two colors</span></h3>
+        <code>
+            <span>@include <strong>sgradient</strong>(</span>
+                <span>
+                    <span>$colors: (</span>
+                    <span>
+                        <span>(#31B7D7, 0%),</span>
+                        <span>(#EDAC7D, 100%)</span>
+                    </span>
+                    <span>)</span>
+                </span>
+            <span>);</span>
+        </code>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h3><span>Horizontal, three colors</span></h3>
+        <code>
+            <span>@include <strong>sgradient</strong>(</span>
+                <span>
+                    <span>$from: left,</span>
+                    <span>$colors: (</span>
+                    <span>
+                        <span>(#E47D7D, 0%),</span>
+                        <span>(#C195D3, 50%),</span>
+                        <span>(#4FB4E8, 100%)</span>
+                    </span>
+                    <span>)</span>
+                </span>
+            <span>);</span>
+        </code>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h3><span>Diagonal, four colors</span></h3>
+        <code>
+            <span>@include <strong>sgradient</strong>(</span>
+                <span>
+                    <span>$from: top left,</span>
+                    <span>$colors: (</span>
+                    <span>
+                        <span>(#B58234, 0%),</span>
+                        <span>(#D2B545, 50%),</span>
+                        <span>(#D7C04D, 50.01%),</span>
+                        <span>(#FFFFFF, 100%)</span>
+                    </span>
+                    <span>)</span>
+                </span>
+            <span>);</span>
+        </code>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h3><span>Radial, two colors</span></h3>
+        <code>
+            <span>@include <strong>sgradient</strong>(</span>
+                <span>
+                    <span>$type: radial,</span>
+                    <span>$colors: (</span>
+                    <span>
+                        <span>(#8ABB5D, 0%),</span>
+                        <span>(#42736F, 100%)</span>
+                    </span>
+                    <span>)</span>
+                </span>
+            <span>);</span>
+        </code>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h3><span>Radial, three colors</span></h3>
+        <code>
+            <span>@include <strong>sgradient</strong>(</span>
+                <span>
+                    <span>$type: radial,</span>
+                    <span>$from: top right,</span>
+                    <span>$colors: (</span>
+                    <span>
+                        <span>(#C5492C, 0%),</span>
+                        <span>(#EAA14E, 50%)</span>
+                        <span>(#F0EB7F, 100%)</span>
+                    </span>
+                    <span>)</span>
+                </span>
+            <span>);</span>
+        </code>
+    </div>
+</section>
+
+</body>
+
+
+</html>
+
+

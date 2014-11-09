@@ -11,6 +11,8 @@
 
 <p><strong style="color: #E5B025">$colors: </strong>hex, rgba</p>
 
+<p><i>* default</i></p>
+
 <h4 style="margin: 70px 0 15px; font-size: 180%;">Include</h4>
 <p>bower install super-gradient</p>
 

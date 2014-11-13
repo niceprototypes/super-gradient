@@ -4,7 +4,7 @@
   @return $contains;
 }
 
-@function orientationString($type, $from, $w3c:false) {
+@function orientation-string($type, $from, $w3c:false) {
   $string: '';
 
   @if $w3c {
@@ -32,7 +32,7 @@
   @return $string;
 }
 
-@function colorSubstring($colors) {
+@function color-substring($colors) {
   $i: 1;
   $substring: '';
   $string: '';
@@ -48,7 +48,7 @@
   @return $string;
 }
 
-@function colorString($colors) {
+@function color-string($colors) {
   $i: 1;
   $spacer: ', ';
   $substring: '';
@@ -57,7 +57,7 @@
   @while $i <= length($colors) {
     @if $i == length($colors) { $spacer: ''; }
 
-    $substring: colorSubstring(nth($colors, $i)) + $spacer;
+    $substring: color-substring(nth($colors, $i)) + $spacer;
     $string: $string + $substring;
     $i: $i + 1;
 
@@ -66,35 +66,35 @@
   @return $string;
 }
 
-@function ieGradientType($direction) {
-  @if $firstColor { @return nth(nth($colors, 1), 1) }
+@function ie-gradient-type($direction) {
+  @if $first-color { @return nth(nth($colors, 1), 1) }
   @else { @return nth(nth($colors, length($colors)), 1) }
 }
 
 
-@function ieColors($colors, $firstColor:true) {
-  @if $firstColor { @return nth(nth($colors, 1), 1) }
+@function ie-colors($colors, $first-color:true) {
+  @if $first-color { @return nth(nth($colors, 1), 1) }
   @else { @return nth(nth($colors, length($colors)), 1) }
 }
 
 @mixin sgradient($type:'linear', $from:'top', $colors:((rgba(42,179,221,1), 0%),(rgba(183,80,80,1), 100%))) {
 
-  $orientationString: orientationString($type, $from);
-  $orientationString_w3c: orientationString($type, $from, $w3c:true);
+  $orientation-string: orientation-string($type, $from);
+  $orientation-string-w3c: orientation-string($type, $from, $w3c:true);
 
-  $colorString: #{colorString($colors)};
+  $color-string: #{color-string($colors)};
 
-  $cssString: gradient(#{$orientationString}#{$colorString});
-  $cssString_w3c: gradient(#{$orientationString_w3c}#{$colorString});
+  $css-string: gradient(#{$orientation-string}#{$color-string});
+  $css-string-w3c: gradient(#{$orientation-string-w3c}#{$color-string});
 
-  $ieGradientType: 0;
-  @if $type != 'vertical' { $ieGradientType: 1 }
+  $ie-gradient-type: 0;
+  @if $type != 'vertical' { $ie-gradient-type: 1 }
 
-  background-color: #{ieColors($colors, false)};
-  background: -webkit-#{$type}-#{$cssString};
-  background:    -moz-#{$type}-#{$cssString};
-  background:     -ms-#{$type}-#{$cssString};
-  background:      -o-#{$type}-#{$cssString};
-  background:         #{$type}-#{$cssString_w3c};
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=#{$ieGradientType}, StartColorStr='#{ieColors($colors)}', EndColorStr='#{ieColors($colors, false)}');
+  background-color: #{ie-colors($colors, false)};
+  background: -webkit-#{$type}-#{$css-string};
+  background:    -moz-#{$type}-#{$css-string};
+  background:     -ms-#{$type}-#{$css-string};
+  background:      -o-#{$type}-#{$css-string};
+  background:         #{$type}-#{$css-string-w3c};
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=#{$ie-gradient-type}, StartColorStr='#{ie-colors($colors)}', EndColorStr='#{ie-colors($colors, false)}');
 }

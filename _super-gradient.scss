@@ -13,6 +13,7 @@
       @if $from == 'top' or $from == 'bottom' { $string: 'to bottom, '; }
       @else if $from == 'left' or $from == 'right' { $string: 'to right, '; }
       @else if $from == (left top) or $from == (top left) or $from == (right bottom) or $from == (bottom right) { $string: '135deg, '; }
+      @else if type_of($from) == 'number' and unit($from) == 'deg' { $string: $from + ', '; }
       @else { $string: '45deg, '; }
 
     } @else if $type == 'radial' { $string: 'ellipse at ' + $from + ', '; }
@@ -23,6 +24,7 @@
       @if $from == 'top' or $from == 'bottom' { $string: 'top, '; }
       @else if $from == 'left' or $from == 'right' { $string: 'left, '; }
       @else if $from == (left top) or $from == (top left) or $from == (right bottom) or $from == (bottom right) { $string: '-45deg, '; }
+      @else if type_of($from) == 'number' and unit($from) == 'deg' { $string: $from + ', '; }
       @else { $string: '45deg, '; }
 
     } @else if $type == 'radial' { $string: $from + ', ellipse cover, '; }

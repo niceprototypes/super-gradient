@@ -15,7 +15,4 @@
 
 <h4 style="margin: 70px 0 15px; font-size: 180%;">Include</h4>
 <p>bower install super-gradient</p>
-
-<h4 style="margin: 70px 0 15px; font-size: 180%;">Demo</h4>
-<p><a href="http://super-gradient.ib.gs" target="_blank">super-gradient.ib.gs</a></p>
 </div>
